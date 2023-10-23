@@ -28,7 +28,7 @@ public class SimplifiedDummy extends SimplifiedCharacter {
     }
 
     private void chooseAbility() {
-        int choice = (int) (Math.random() * (9) + 1);
+        int choice = (int) (Math.random() * (10) + 1);
         if(choice <= 5) {
             this.currentAbility = this.abilities[0];
         } else if(choice <= 9) {
