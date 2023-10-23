@@ -2,14 +2,10 @@ package TestingDriver;
 
 import map.simplified.*;
 
-public class TestDriver {
+public class MapTestDriver {
 
     public static void main (String[] args) throws ImpossiblePathException, IllegalMapRequirementPairException, IllegalMapNodeTypeException {
-        for(int lcv = 0; lcv < 5; lcv++) {
-            System.out.println("Map #"+ (lcv+1)+":");
             testMapGeneration(5, 10);
-            System.out.println();
-        }
     }
 
     public static void testPathGeneration(int length) throws IllegalMapRequirementPairException, ImpossiblePathException, IllegalMapNodeTypeException {
