@@ -14,12 +14,12 @@ public class SimplifiedDummyStrike extends SimplifiedAttack{
     }
 
     @Override
-    public String useAbility(int adv, int dis) {
-        int totalAdv = this.advantage + adv;
-        int totalDis = this.disadvantage + dis;
+    public String useAbility() {
+        int totalAdv = this.advantage + this.user.getAdvantage();
+        int totalDis = this.disadvantage + this.user.getDisadvantage();
         int attackDamage = this.attackDie.rollWithModifications(totalAdv, totalDis);
         this.target.takeXDamage(attackDamage);
-        return(this.user.getName() + " used " + this.name + " on " +
-                this.target.getName() + " dealing " + attackDamage + " damage!");
+        return("*" + this.user.getName() + " used " + this.name + " on " +
+                this.target.getName() + " dealing " + attackDamage + " damage!*");
     }
 }

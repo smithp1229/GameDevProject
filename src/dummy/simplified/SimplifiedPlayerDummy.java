@@ -3,11 +3,15 @@ package dummy.simplified;
 import ability.simplified.SimplifiedAbility;
 import character.simplified.SimplifiedCharacter;
 
-public class SimplifiedDummy extends SimplifiedCharacter {
+import java.util.Scanner;
+
+public class SimplifiedPlayerDummy extends SimplifiedCharacter {
     SimplifiedAbility [] abilities;
     SimplifiedAbility currentAbility;
-    public SimplifiedDummy() {
-        super.name = "SimplifiedDummy";
+
+    Scanner scan;
+    public SimplifiedPlayerDummy() {
+        super.name = "SimplifiedPlayerDummy";
         super.maxHealth = 50;
         super.currentHealth = 50;
         super.armor = 0;
@@ -15,6 +19,7 @@ public class SimplifiedDummy extends SimplifiedCharacter {
         super.disadvantage = 0;
         super.speed = 1;
         this.abilities = createDummyAbilities();
+        scan = new Scanner(System.in);
     }
 
     private SimplifiedAbility[] createDummyAbilities() {
@@ -28,14 +33,9 @@ public class SimplifiedDummy extends SimplifiedCharacter {
     }
 
     private void chooseAbility() {
-        int choice = (int) (Math.random() * (10) + 1);
-        if(choice <= 5) {
-            this.currentAbility = this.abilities[0];
-        } else if(choice <= 9) {
-            this.currentAbility = this.abilities[1];
-        } else {
-            this.currentAbility = this.abilities[2];
-        }
+        System.out.println("Choose Attack: 1: Strike, 2: Block, 3: Buff");
+        int choice = scan.nextInt();
+        this.currentAbility = this.abilities[choice - 1];
     }
 
     private void pickAbilityTargets() {

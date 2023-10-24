@@ -11,7 +11,7 @@ public class SimplifiedDie {
     }
 
     public int roll() {
-        return (int) (Math.random() * (this.sides - 1) + 1);
+        return (int) (Math.random() * (this.sides) + 1);
     }
 
     public int rollWithAdvantage(int advantageStacks) {

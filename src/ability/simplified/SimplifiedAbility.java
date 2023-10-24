@@ -51,5 +51,5 @@ public abstract class SimplifiedAbility {
 
     public void setUser (SimplifiedCharacter ch) {this.user = ch;}
 
-    public abstract String useAbility(int adv, int dis);
+    public abstract String useAbility();
 }

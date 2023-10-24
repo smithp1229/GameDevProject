@@ -14,12 +14,12 @@ public class SimplifiedDummyBlock extends SimplifiedSkill {
     }
 
     @Override
-    public String useAbility(int adv, int dis) {
-        int totalAdv = this.advantage + adv;
-        int totalDis = this.disadvantage + dis;
+    public String useAbility() {
+        int totalAdv = this.advantage + this.user.getAdvantage();
+        int totalDis = this.disadvantage + this.user.getDisadvantage();
         int blockArmor = this.blockDie.rollWithModifications(totalAdv, totalDis);
         this.target.setArmor(this.target.getArmor() + blockArmor);
-        return (this.user.getName() + " used " + this.name +
-                " giving it " + blockArmor + " armor!");
+        return ("*" + this.user.getName() + " used " + this.name +
+                " giving it " + blockArmor + " armor!*");
     }
 }

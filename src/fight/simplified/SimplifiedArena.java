@@ -24,7 +24,7 @@ public class SimplifiedArena {
                 activeChar.takeTurn(true);
                 System.out.println();
                 printCharacterStatuses();
-                Thread.sleep(2500);
+                Thread.sleep(1500);
             }
         }
         if ((this.army1.isDead()) && (this.army2.isDead())) {
@@ -37,6 +37,7 @@ public class SimplifiedArena {
             System.out.println("The fight is over, but there is no winner... somehow.");
         }
     }
+
 
     boolean isFightOver() {
         return (this.army1.isDead() || this.army2.isDead());

@@ -13,8 +13,8 @@ public class SimplifiedDummyBuff extends SimplifiedSpell {
     }
 
     @Override
-    public String useAbility(int adv, int dis) {
+    public String useAbility() {
         this.target.setAdvantage(this.target.getAdvantage() + 1);
-        return (this.user.getName() + " used " + this.name + " giving it one advantage!");
+        return ("*" + this.user.getName() + " used " + this.name + " giving it one advantage!*");
     }
 }
